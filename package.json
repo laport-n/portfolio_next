@@ -3,19 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node server.js",
+    "dev": "next dev",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "next start -p 3000"
   },
   "dependencies": {
-    "animate.css": "^4.1.1",
-    "fs": "0.0.1-security",
-    "history": "^5.0.0",
     "next": "9.5.5",
     "react": "16.14.0",
-    "react-animated-css": "^1.2.1",
     "react-dom": "16.14.0",
+    "animate.css": "^4.1.1",
+    "history": "^5.0.0",
     "react-ga": "^3.1.2",
+    "react-animated-css": "^1.2.1",
     "react-helmet": "^6.1.0",
     "react-router-dom": "^5.2.0",
     "react-router-ga": "^1.2.3",
