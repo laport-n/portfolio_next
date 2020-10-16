@@ -3,7 +3,7 @@ const next = require('next')
 
 const fs = require('fs');
 
-const port = parseInt(process.env.PORT, 10) || 8000
+const port = parseInt(process.env.PORT, 10) || 443
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
