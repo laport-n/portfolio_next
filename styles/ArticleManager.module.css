@@ -1,0 +1,15 @@
+.article {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 50%;
+  margin: auto;
+}
+
+@media(max-width:767px){
+  .article {
+    width:90%;
+  }
+}

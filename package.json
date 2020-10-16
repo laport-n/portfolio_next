@@ -10,6 +10,17 @@
   "dependencies": {
     "next": "9.5.5",
     "react": "16.14.0",
-    "react-dom": "16.14.0"
+    "react-dom": "16.14.0",
+    "animate.css": "^4.1.1",
+    "history": "^5.0.0",
+    "react-ga": "^3.1.2",
+    "react-animated-css": "^1.2.1",
+    "react-helmet": "^6.1.0",
+    "react-router-dom": "^5.2.0",
+    "react-router-ga": "^1.2.3",
+    "react-scripts": "3.4.3",
+    "react-share": "^4.3.1",
+    "react-syntax-highlighter": "^15.2.1",
+    "react-transition-group": "^4.4.1"
   }
 }

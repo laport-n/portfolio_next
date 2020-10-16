@@ -1,0 +1,14 @@
+.articles {
+  display: flex;
+  margin: auto;
+  flex-direction: row;
+  flex-wrap: wrap;
+  grid-gap: 1rem;
+  width: 50%;
+}
+
+@media(max-width:767px){
+  .articles {
+    width:90%;
+  }
+}

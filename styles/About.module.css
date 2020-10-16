@@ -1,0 +1,9 @@
+.about {
+  width:50%;
+}
+
+@media(max-width:767px){
+  .about {
+    width:90%;
+  }
+}

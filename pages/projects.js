@@ -2,6 +2,8 @@ import React from 'react';
 import styles from './../styles/Projects.module.css';
 import { Animated } from "react-animated-css";
 
+import {Helmet} from "react-helmet";
+
 import ProjectCard from './../components/Projects/ProjectCard';
 import Header from './../components/Header/Header';
 import Head from 'next/head'
@@ -52,7 +54,7 @@ function Projects() {
 
   for (let x = 0; x < cardsInfo.length; x++){
     items.push(
-        <Animated key={x} animationIn="flipInX" animationInDelay={animationDuration} isVisible={true}>
+        <Animated key={x} animationIn="flipInX" animationInDelay={animationDuration}  animationOut="bounceOutRight" isVisible={true}>
           <ProjectCard key={x} id={cardsInfo[x].id} image={cardsInfo[x].image} title={cardsInfo[x].title} summary={cardsInfo[x].summary} animationDuration={animationDuration} />
         </Animated>
     );
@@ -69,7 +71,6 @@ function Projects() {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
         <title>Ma carrière en tant que développeur - Laporte Nicolas</title>
         <meta name="description" content="Nicolas laporte développeur informatique depuis 6 ans. Possibilités de travailler depuis Montpellier ou en remote. Créateur de contenu, site web et maintenance."/>
-        <link rel="canonical" href="https://nicolas-laporte.dev/about"/>
       </Head>
       <Header />
       <div className={styles.projects}>
