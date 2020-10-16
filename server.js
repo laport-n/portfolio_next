@@ -1,26 +1,25 @@
+const { createServer } = require('http')
+const next = require('next')
 
-const { createServer } = require('https');
-const { parse } = require('url');
-const next = require('next');
-const fs = require('fs');
-
-const dev = process.env.NODE_ENV !== 'production';
-const app = next({ dev });
-const handle = app.getRequestHandler();
-
-const httpsOptions  = {
-  cert: fs.readFileSync('/etc/letsencrypt/live/nicolas-laporte.dev/cert.pem'),
-  ca: fs.readFileSync('/etc/letsencrypt/live/nicolas-laporte.dev/chain.pem'),
-  key : fs.readFileSync('/etc/letsencrypt/live/nicolas-laporte.dev/privkey.pem')
-};
+const port = parseInt(process.env.PORT, 10) || 3000
+const dev = process.env.NODE_ENV !== 'production'
+const app = next({ dev })
+const handle = app.getRequestHandler()
 
 app.prepare().then(() => {
-  createServer(httpsOptions, (req, res) => {
-    const parsedUrl = parse(req.url, true);
-    handle(req, res, parsedUrl);
+createServer((req, res) => {
+  const parsedUrl = new URL(req.url, 'http://w.w')
+  const { pathname, query } = parsedUrl
 
-  }).listen(3000, err => {
-    if (err) throw err;
-    console.log('> Ready on https://localhost:3000');
-  });
-});
+  if (pathname === '/a') {
+    app.render(req, res, '/a', query)
+  } else if (pathname === '/b') {
+    app.render(req, res, '/b', query)
+  } else {
+    handle(req, res, parsedUrl)
+  }
+}).listen(port, (err) => {
+  if (err) throw err
+  console.log(`> Ready on http://localhost:${port}`)
+})
+})
